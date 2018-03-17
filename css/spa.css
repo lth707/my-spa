@@ -2,63 +2,97 @@
 *spa.css
 *root namespace styles
 */
+
+
 /*beign reset*/
+
 * {
-  margin:0;
-  padding:0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-h1,h2,h3,h4,h5,h6,p{
-  margin-bottom: 10px
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 10px
 }
-ol,ul,dl {
-  list-style-position:inside 
+
+ol,
+ul,
+dl {
+    list-style-position: inside
 }
+
+
 /*end reset*/
 
+
 /*begin standard selectors*/
+
 body {
-  font:13px 'Trebuchet Ms',Verdana,Helvetica,Arial,sans-serif;
-  color:#444;
-  background-color: #888;
+    font: 13px 'Trebuchet Ms', Verdana, Helvetica, Arial, sans-serif;
+    color: #444;
+    background-color: #888;
 }
+
 a {
-  text-decoration: none;
-  
+    text-decoration: none;
 }
-a:link,a:visited {
-  color:inherit
+
+a:link,
+a:visited {
+    color: inherit
 }
+
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
 string {
-  font-weight: 800;
-  color: #000
+    font-weight: 800;
+    color: #000
 }
+
+
 /*end standard selectors*/
+
+
 /*begin spa namespace selectors*/
+
 #spa {
-  position :absolute;
-  top:8px;
-  left:8px;
-  bottom:8px;
-  right: 8px;
-  min-height: 500px;
-  min-width: 500px;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: 0 8px 0 8px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    bottom: 8px;
+    right: 8px;
+    min-height: 500px;
+    min-width: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0 8px 0 8px;
 }
+
+
 /*end spa namespace selectors*/
+
+
 /*begin utility selectors*/
+
 .spa-x-select {}
-.spa-x-clearfloat{
-  height: 0!important;
-  float:none!important;
-  visibility: hidden!important;
-  clear:both!important
+
+.spa-x-clearfloat {
+    height: 0!important;
+    float: none!important;
+    visibility: hidden!important;
+    clear: both!important
 }
+
+
 /*end utility selectors*/
