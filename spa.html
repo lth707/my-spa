@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>spa</title>
+  <link type="text/css" href="./css/spa.css" rel="stylesheet" />
+  <link type="text/css" href="./css/spa.shell.css" rel="stylesheet" />
+  <!--third party javascript-->
+  <script src="./js/jq/jquery-3.3.1.min.js"></script>
+  <script src="./js/jq/jquery.uriAnchor.js"></script>
+
+  <!--our javascript-->
+  <script type="text/javascript" src="./js/spa.js"></script>
+  <script type="text/javascript" src="./js/spa.shell.js"></script>
+  <script>
+    $(function () {
+      spa.initModule($('#spa'));
+    });
+  </script>
+</head>
+
+<body>
+  <div id='spa'>
+    <!--<div class="spa-slider"></div>-->
+  </div>
+</body>
+
+</html>
