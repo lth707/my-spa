@@ -40,16 +40,18 @@ spa.shell = (function() {
             chat_retracted_title: '点击展开',
             anchor_schema_map: {
                 chat: { opened: true, closed: true }
-            }
+            },
+            resize_interval: 20
         },
         stateMap = {
             $container: null,
-            anchor_map: {}
+            anchor_map: {},
+            resize_idto: undefined
         },
         jqueryMap = {},
 
         copyAnchorMap, setJqueryMap,
-        changeAnchorPart, onHashchange,
+        changeAnchorPart, onHashchange, onResize,
         setChatAnchor, initModule;
     //-----------end module scope variables-----------
 
@@ -112,7 +114,19 @@ spa.shell = (function() {
 
 
     //----------begin event handlers----------
-    //begin event method /onHashchange/
+
+    //begin event handler /onResize/
+    onResize = function() {
+        if (stateMap.resize_idto) { return true; }
+        spa.chat.handleResize();
+        stateMap.resize_idto = setTimeout(function() {
+            stateMap.resize_idto = undefined;
+        }, configMap.resize_interval);
+        return true;
+    }
+
+    //end event handler /onResize/
+    //begin event handler /onHashchange/
     onHashchange = function(event) {
         var anchor_map_previous = copyAnchorMap(),
             anchor_map_proposed,
@@ -160,7 +174,7 @@ spa.shell = (function() {
         //end adjust chat component if changed
         return false
     };
-    //end event method /onHashchange/
+    //end event handler /onHashchange/
 
 
     //----------end event handlers------------
@@ -193,7 +207,9 @@ spa.shell = (function() {
                 people_model: spa.model.people
             });
             spa.chat.initModule(jqueryMap.$container);
-            $(window).bind('hashchange', onHashchange)
+            $(window)
+                .bind('resize', onResize)
+                .bind('hashchange', onHashchange)
                 .trigger('hashchange')
         }
         //end public method /initModule/
