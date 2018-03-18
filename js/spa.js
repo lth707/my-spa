@@ -17,12 +17,13 @@
 //Module /spa/
 //provides chat slider capability
 //
-var spa = (function ($) {
-
-  // public method /initModule/
-  // sets initial state and provides feature
-  initModule = function ($container) {
-    spa.shell.initModule($container)
-  }
-  return { initModule: initModule }
+var spa = (function($) {
+    'use strict';
+    // public method /initModule/
+    // sets initial state and provides feature
+    var initModule = function($container) {
+        spa.model.initModule();
+        spa.shell.initModule($container);
+    };
+    return { initModule: initModule }
 })(jQuery)
