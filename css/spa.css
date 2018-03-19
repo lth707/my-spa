@@ -7,6 +7,17 @@
 /*beign reset*/
 
 * {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -28,6 +39,17 @@ ol,
 ul,
 dl {
     list-style-position: inside
+}
+
+input,
+textarea,
+.spa-x-user-select {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 
