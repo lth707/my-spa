@@ -161,7 +161,7 @@ spa.chat = (function () {
 
     onTabList = function (event) {
         var $tapped = $(event.elem_target), chatee_id;
-        if (!tapped.hasClass('spa-chat-list-name')) { return false; }
+        if (!$tapped.hasClass('spa-chat-list-name')) { return false; }
         chatee_id = $tapped.attr('data-id');
         if (!chatee_id) { return false; }
         configMap.chat_model.set_chatee(chatee_id);
@@ -185,8 +185,8 @@ spa.chat = (function () {
             .end()
             .find('[data-id=' + arg_map.new_chatee.id + ']')
             .addClass('spa-x-select');
-        writeAlert('now chatting with' + arg_map.new_chatee.name);
-        jqueryMap.$title.text('chat with' + arg_map.new_chatee.name);
+        writeAlert('now chatting with ' + arg_map.new_chatee.name);
+        jqueryMap.$title.text('chat with ' + arg_map.new_chatee.name);
         return true;
     };
     onListchange = function (event) {
@@ -224,7 +224,7 @@ spa.chat = (function () {
             return false;
         }
         is_user = sender.get_is_user();
-        if (!(is_user || sender_id === chatee_id)) {
+        if (!(is_user || sender_id === chatee.id)) {
             configMap.chat_model.set_chatee(sender_id);
         }
         writeChat(sender.name, msg_text, is_user);
@@ -296,7 +296,7 @@ spa.chat = (function () {
         return true;
     }
 
-    scrollCHat = function () {
+    scrollChat = function () {
         var $msg_log = jqueryMap.$msg_log;
         $msg_log.animate({
             scrollTop: $msg_log.prop('scrollHeight') - $msg_log.height()
@@ -306,12 +306,12 @@ spa.chat = (function () {
         var msg_class = is_user ? 'spa-chat-msg-log-me' : 'spa-chat-msg-log-msg';
         jqueryMap.$msg_log.append(
             '<div class="' + msg_class + '">' +
-            spa.util_b.encodeHtml(person_name) + '：' + spa.util_b.encodeHtml(text) + '</div>'
+            spa.util_b.encodeHtml(person_name) + ':' + spa.util_b.encodeHtml(text) + '</div>'
         );
         scrollChat();
     };
     writeAlert = function (alert_text) {
-        jqueryMap.$msg_log(
+        jqueryMap.$msg_log.append(
             '<div class="spa-chat-msg-log-alert">' +
             spa.util_b.encodeHtml(alert_text) + '</div>'
         );
