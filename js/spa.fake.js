@@ -28,7 +28,7 @@ spa.fake = (function () {
         name: 'betty',
         _id: 'id_01',
         css_map: {
-            top: 20,
+            top: 40,
             left: 20,
             'background-color': 'rgb(128,128,128)'
         }
@@ -37,7 +37,7 @@ spa.fake = (function () {
         name: 'mike',
         _id: 'id_02',
         css_map: {
-            top: 60,
+            top: 80,
             left: 20,
             'background-color': 'rgb(128,255,128)'
         }
@@ -46,7 +46,7 @@ spa.fake = (function () {
         name: 'pepples',
         _id: 'id_03',
         css_map: {
-            top: 100,
+            top: 120,
             left: 20,
             'background-color': 'rgb(128,192,192)'
         }
@@ -54,7 +54,7 @@ spa.fake = (function () {
         name: 'wilma',
         _id: 'id_04',
         css_map: {
-            top: 140,
+            top: 160,
             left: 20,
             'background-color': 'rgb(192,128,128)'
         }
@@ -64,7 +64,7 @@ spa.fake = (function () {
             name: 'betty',
             _id: 'id_01',
             css_map: {
-                top: 20,
+                top: 40,
                 left: 20,
                 'background-color': 'rgb(128,128,128)'
             }
@@ -73,7 +73,7 @@ spa.fake = (function () {
             name: 'mike',
             _id: 'id_02',
             css_map: {
-                top: 60,
+                top: 80,
                 left: 20,
                 'background-color': 'rgb(128,255,128)'
             }
@@ -82,7 +82,7 @@ spa.fake = (function () {
             name: 'pepples',
             _id: 'id_03',
             css_map: {
-                top: 100,
+                top: 120,
                 left: 20,
                 'background-color': 'rgb(128,192,192)'
             }
@@ -90,7 +90,7 @@ spa.fake = (function () {
             name: 'wilma',
             _id: 'id_04',
             css_map: {
-                top: 140,
+                top: 160,
                 left: 20,
                 'background-color': 'rgb(192,128,128)'
             }
